@@ -13,3 +13,22 @@ Cheat sheet: http://docs.scala-lang.org/cheatsheets/
 
 4. oppgaver
 5. review, sikkert over alk på julebordet.
+
+
+Resources:
+https://twitter.github.io/scala_school/index.html
+http://mauricio.github.io/2013/11/25/learning-scala-by-building-scala-lists.html
+http://james-iry.blogspot.com.br/2007/09/monads-are-elephants-part-1.html
+https://github.com/scalatron/scalatron/blob/master/Scalatron/doc/markdown/Scalatron%20Game%20Rules.md
+http://blog.fzakaria.com/2014/05/play-framework-with-akka-actors-on-heroku/
+
+
+html slides
+https://github.com/hakimel/reveal.js
+
+
+Plan:
+1. List/Tree  map filter reduce flatmap
+
+x. Monads what why how
+

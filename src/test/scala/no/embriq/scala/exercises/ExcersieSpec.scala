@@ -133,14 +133,3 @@ class ExcersieSpec extends FlatSpec with Matchers with PendingIfUnimplemented {
 //  }
 
 }
-
-trait PendingIfUnimplemented extends SuiteMixin {
-  this: Suite =>
-
-  abstract override def withFixture(test: NoArgTest): Outcome = {
-    super.withFixture(test) match {
-      case Failed(ex: NotImplementedError) => Failed("Oppgaven er ikke implementert enda")
-      case other => other
-    }
-  }
-}
