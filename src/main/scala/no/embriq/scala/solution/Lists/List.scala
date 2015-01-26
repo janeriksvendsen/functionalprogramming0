@@ -81,6 +81,8 @@ object List {
 
   def filter2[A](l: List[A], f: A => Boolean): List[A] = this.foldRight(l, Nil: List[A])((h, t) => if (f(h)) Cons(h, t) else t)
 
+  def filter3[A](l: List[A])( f: A => Boolean): List[A] = this.foldRight(l, Nil: List[A])((h, t) => if (f(h)) Cons(h, t) else t)
+
   def map[A, B](l: List[A], f: A => B): List[B] = l match {
     case Nil => Nil
     case Cons(h, t) => Cons(f(h), map(t, f))
