@@ -1,3 +1,5 @@
+package no.embriq.scala.exercises.Lists
+
 import no.embriq.scala.exercises.{PendingIfUnimplemented, _}
 import org.scalatest.{FlatSpec, Matchers}
 

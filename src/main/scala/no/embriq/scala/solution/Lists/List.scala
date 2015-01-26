@@ -1,4 +1,4 @@
-package no.embriq.scala.solution
+package no.embriq.scala.solution.Lists
 
 import scala.annotation.tailrec
 

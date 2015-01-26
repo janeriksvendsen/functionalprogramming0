@@ -1,7 +1,7 @@
-package no.embriq.scala.exercises
+package no.embriq.scala.exercises.NintyNineProblems
 
-import no.embriq.scala.exercises.Excersise._
-
+import no.embriq.scala.exercises.NintyNineProblems.Excersise._
+import no.embriq.scala.exercises.PendingIfUnimplemented
 import org.scalatest._
 
 class ExcersieSpec extends FlatSpec with Matchers with PendingIfUnimplemented {

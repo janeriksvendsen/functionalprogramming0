@@ -1,4 +1,5 @@
-package no.embriq.scala.solution
+package no.embriq.scala.solution.NintyNineProblems
+
 
 object Solution1to20something {
   // P01 (*) Find the last element of a list.

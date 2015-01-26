@@ -8,12 +8,9 @@ list.reverse
 list.drop(5)
 list.take(5)
 list.splitAt(5)
-
 abcdef zip list
 (abcdef zip list).unzip
-
 abcdef zipWithIndex
-
 List(1, 2, 3) map (_ + 1)
 
 val words = List("the", "quick", "brown", "fox")
@@ -23,5 +20,4 @@ words flatMap (_.toList)
 List(Option(1), None, Option(2)) map (x => x)
 List(Option(1), None, Option(2)) flatMap (x => x)
 List(Option(1), None, Option(2)) flatMap _
-
 

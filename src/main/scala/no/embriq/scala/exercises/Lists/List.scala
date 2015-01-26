@@ -1,4 +1,4 @@
-package no.embriq.scala.exercises
+package no.embriq.scala.exercises.Lists
 
 sealed trait List[+A]
 
