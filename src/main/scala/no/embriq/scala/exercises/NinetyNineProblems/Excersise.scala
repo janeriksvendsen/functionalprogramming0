@@ -1,4 +1,4 @@
-package no.embriq.scala.exercises.NintyNineProblems
+package no.embriq.scala.exercises.NinetyNineProblems
 
 
 object Excersise {

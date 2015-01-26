@@ -1,10 +1,10 @@
-package no.embriq.scala.solution.NintyNineProblems
+package no.embriq.scala.exercises.NinetyNineProblems
 
-import no.embriq.scala.solution.NintyNineProblems.Solution1to20something._
+import no.embriq.scala.exercises.NinetyNineProblems.Excersise._
 import no.embriq.scala.exercises.PendingIfUnimplemented
 import org.scalatest._
 
-class Excersise1to20Spec extends FlatSpec with Matchers with PendingIfUnimplemented {
+class ExcersieSpec extends FlatSpec with Matchers with PendingIfUnimplemented {
 
   "P01" should "return last element of list" in {
     last(List(1, 2, 3)) shouldBe 3
@@ -93,7 +93,7 @@ class Excersise1to20Spec extends FlatSpec with Matchers with PendingIfUnimplemen
     insertAt('new, 1, List('a, 'b, 'c, 'd)) shouldBe List('a, 'new, 'b, 'c, 'd)
   }
 
-  "P22" should "Create a list containing all integers incluseive within a given range." in {
+  "P22" should "Create a list containing all integers within a given range." in {
     range(4, 9) shouldBe List(4, 5, 6, 7, 8, 9)
   }
 
