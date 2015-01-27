@@ -1,6 +1,6 @@
-package no.embriq.scala.exercises.NinetyNineProblems
+package no.embriq.scala.exercises.ninetynineproblems
 
-import no.embriq.scala.exercises.NinetyNineProblems.Excersise._
+import no.embriq.scala.exercises.ninetynineproblems.Excersise._
 import no.embriq.scala.exercises.PendingIfUnimplemented
 import org.scalatest._
 

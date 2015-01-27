@@ -1,4 +1,4 @@
-package no.embriq.scala.solution.NinetyNineProblems
+package no.embriq.scala.solution.ninetynineproblems
 
 
 object Solution1to20something {
