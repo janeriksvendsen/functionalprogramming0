@@ -1,23 +1,39 @@
-val list = List(1, 2, 3, 4, 5, 6, 7, 8, 9, 0)
-val abcdef = List('a', 'b', 'c', 'd', 'e', 'f')
-list.head // O(1)
-list.tail // O(1)
-list.last // O(n)
-list.init // O(n)
-list.reverse
-list.drop(5)
-list.take(5)
-list.splitAt(5)
-abcdef zip list
-(abcdef zip list).unzip
-abcdef zipWithIndex
-List(1, 2, 3) map (_ + 1)
 
-val words = List("the", "quick", "brown", "fox")
-words map (_.toList)
-words flatMap (_.toList)
 
-List(Option(1), None, Option(2)) map (x => x)
-List(Option(1), None, Option(2)) flatMap (x => x)
-List(Option(1), None, Option(2)) flatMap _
+// List er en ADT (Algebraic data type)
+sealed trait List[+A];
+// Sammensatt av enten Ingenting
+case object Nil extends List[Nothing]
+// eller et element etterfulgt av en liste
+case class Cons[+A](head: A, tail: List[A]) extends List[A]
 
+
+// Construksjon av en liste
+val list0 = Nil // en tom liste
+val list1 = Cons(1, Nil) // en liste med et element
+val list2 = Cons(2, list1) // en liste med to elementr
+
+// Deconstruksjone av en liste
+
+val head = list2 match {
+  case Cons(x, xs) => x
+}
+
+// rekursjon
+def sum(ints: List[Int]): Int = ints match {
+  case Nil => 0
+  case Cons(i, is) => i + sum(is)
+}
+
+sum(list2)
+
+
+
+
+
+//Conpanion objekt for å forenkle instansiering
+object List {
+  def apply[A](as: A*): List[A] =
+    if (as.isEmpty) Nil
+    else Cons(as.head, apply(as.tail: _*))
+}

@@ -40,6 +40,7 @@ class ListSpec extends FlatSpec with Matchers with PendingIfUnimplemented {
 
   "List revers" should "return the same list reversed" in {
     List.reverse(list123) shouldBe List(3, 2, 1)
+    List.reverse2(list123) shouldBe List(3, 2, 1)
   }
 
   "flatten" should "merge all list in a list to one list" in {

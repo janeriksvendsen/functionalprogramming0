@@ -52,6 +52,18 @@ object List {
     case Cons(h, t) => 1 + length(t)
   }
 
-  def reverse[A](l: List[A]): List[A] = ???
+  def reverse[A](l: List[A]): List[A] = {
+    def reverse(acc: List[A], rest: List[A]): List[A] = rest match {
+      case Nil => acc
+      case Cons(h, t) => reverse(Cons(h, acc), t)
+    }
+
+    reverse(Nil, l)
+  }
+
+  def reverse2[A](l: List[A]): List[A] = l match {
+    case Nil => Nil
+    case Cons(h, t) => append(reverse2(t), List(h))
+  }
 
 }
