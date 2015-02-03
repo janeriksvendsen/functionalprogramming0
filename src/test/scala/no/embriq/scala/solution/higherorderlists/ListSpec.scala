@@ -20,14 +20,6 @@ class ListSpec extends FlatSpec with Matchers with PendingIfUnimplemented {
     List.foldLeft(list123, Nil: List[Int])((xs, x) => Cons(x, xs)) shouldBe List(3, 2, 1)
   }
 
-  "take" should "return a list of the n first elements " in {
-    List.take(list123, 2) shouldBe List(1, 2)
-  }
-
-  "drop" should "return a list vhere the n first elements are removed" in {
-    List.drop(list123, 2) shouldBe List(3)
-  }
-
   "append of 2 lists" should "return a new list contaning the elements from the 2 lists" in {
     List.append(list123, list456) shouldBe List(1, 2, 3, 4, 5, 6)
     List.append2(list123, list456) shouldBe List(1, 2, 3, 4, 5, 6)
@@ -36,14 +28,6 @@ class ListSpec extends FlatSpec with Matchers with PendingIfUnimplemented {
   "length" should "return the lengt of the list" in {
     List.length(list123) shouldBe 3
     List.length2(list123) shouldBe 3
-  }
-
-  "drop while" should "drop start of list while functions evaluate to true" in {
-    List.dropWhile(list123, (x: Int) => x < 2) shouldBe List(2, 3)
-  }
-
-  "take while" should "return start of list until functions evaluate to true" in {
-    List.takeWhile(list123, (x: Int) => x < 2) shouldBe List(1)
   }
 
   "sum" should "return the som of all elements in the list" in {

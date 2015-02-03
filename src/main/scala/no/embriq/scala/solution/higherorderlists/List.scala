@@ -33,12 +33,7 @@ object List {
 
   def sum(l: List[Int]): Int = List.foldLeft(l, 0)(_ + _)
 
-  def product(l: List[Int]): Int =  List.foldLeft(l, 1)(_ * _)
-
-  def take[A](l: List[A], n: Int): List[A] = ???
-  def takeWhile[A](l: List[A], f: A => Boolean): List[A] = ???
-  def drop[A](l: List[A], n: Int): List[A] = ???
-  def dropWhile[A](l: List[A], f: A => Boolean): List[A] = ???
+  def product(l: List[Int]): Int = List.foldLeft(l, 1)(_ * _)
 
   def length[A](l: List[A]): Int = List.foldLeft(l, 0)((i, _) => i + 1)
 
@@ -54,7 +49,7 @@ object List {
 
   def flatMap[A, B](l: List[A], f: A => List[B]): List[B] = List.flatten(List.map(l, f))
 
-  def flatMap2[A, B](l: List[A], f: A => List[B]): List[B] = this.foldRight(l, Nil: List[B])((h, t) => List.append(f(h), t))
+  def flatMap2[A, B](l: List[A], f: A => List[B]): List[B] = this.foldRight(l, Nil: List[B])((a, bs) => List.append(f(a), bs))
 
   //  true iff f == true on all elements
   def forall[A](l: List[A], f: A => Boolean): Boolean = foldLeft(l, true)(_ && f(_))
