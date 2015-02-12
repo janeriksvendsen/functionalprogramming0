@@ -1,11 +1,11 @@
 
 
 // List er en ADT (Algebraic data type)
-sealed trait List[+A];
+sealed trait List[+A]
 // Sammensatt av enten Ingenting
 case object Nil extends List[Nothing]
 // eller et element etterfulgt av en liste
-case class Cons[+A](head: A, tail: List[A]) extends List[A]
+case class Cons[+hsdfk](head: hsdfk, tail: List[hsdfk]) extends List[hsdfk]
 
 
 // Construksjon av en liste
@@ -27,13 +27,11 @@ def sum(ints: List[Int]): Int = ints match {
 
 sum(list2)
 
-
-
-
-
 //Conpanion objekt for å forenkle instansiering
 object List {
   def apply[A](as: A*): List[A] =
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 }
+
+List(1,2,3)

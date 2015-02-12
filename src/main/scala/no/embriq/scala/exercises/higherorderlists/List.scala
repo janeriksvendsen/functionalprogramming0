@@ -11,7 +11,7 @@ object List {
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 
-  def apply[A](as: scala.List[A]): List[A] =  as.foldRight(Nil:List[A])( (a:A, b:List[A]) => Cons(a,b))
+  def apply[A](as: scala.List[A]): List[A] = as.foldRight(Nil: List[A])((a: A, b: List[A]) => Cons(a, b))
 
   // fra høyre til venstre
   def foldRight[A, B](l: List[A], z: B)(f: (A, B) => B): B = ???
