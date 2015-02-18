@@ -11,17 +11,32 @@ object List {
     if (as.isEmpty) Nil
     else Cons(as.head, apply(as.tail: _*))
 
-  def sum(ints: List[Int]): Int = ???
+  def sum(ints: List[Int]): Int = ints match {
+    case Nil => 0
+    case Cons(i, is) => i + sum(is)
+  }
 
-  def product(ds: List[Int]): Double = ???
+  def product(ds: List[Int]): Int = ds match {
+    case Nil => 1
+    case Cons(d, ds) => d * product(ds)
+  }
 
   // returner de n første elementer i lista
-  def take[A](l: List[A], n: Int): List[A] = ???
+  def take[A](l: List[A], n: Int): List[A] = l match {
+    case Nil => Nil
+    case Cons(i, is) => if (n == 0) Nil else Cons(i, take(is, n-1))
+  }
 
   // returner resten av lista fra pos n.
-  def drop[A](l: List[A], n: Int): List[A] = ???
+  def drop[A](l: List[A], n: Int): List[A] = l match {
+    case Nil => Nil
+    case Cons(i, is) => if (n == 0) l else drop(is, n-1)
+  }
 
-  def length[A](as: List[A]): Int = ???
+  def length[A](as: List[A]): Int = as match {
+    case Nil => 0
+    case Cons(i, is) => 1 + length(is)
+  }
 
   // Slå sammen to lister til 1
   def append[A](a1: List[A], a2: List[A]): List[A] = ???

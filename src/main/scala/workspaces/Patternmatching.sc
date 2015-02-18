@@ -1,32 +1,3 @@
-val anInteger = 5
-anInteger match {
-  case 1 => println("Number One")
-  case 2 => println("Runner up")
-  case _ => println("Everyone else")
-}
-
-
-val something: Any = 1
-
-something match {
-  case i: Int => println("Found a number:" + i)
-  case s: String => println("Found a string:" + s)
-  case _ => println("Found unsupported type")
-}
-
-
-
-something match {
-  case i: Int => println("Found a number:" + i)
-  case s: String => println("Found a string:" + s)
-  case _ => println("Found unsupported type")
-}
-
-val acceptedType = something match {
-  case i: Int => true
-  case s: String => true
-  case other => false
-}
 
 val userAndPassword = ("alfred", "secret")
 val organizationKey = "abd4kgo3wgbo2"

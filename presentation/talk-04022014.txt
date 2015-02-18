@@ -1,0 +1,99 @@
+think like unix pipe
+no mutability
+
+
+--
+expressions and imutabillity
+functions
+
+basic data structures
+case classes
+pattern matching
+
+functional combinatores
+--
+
+val / var
+
+def function
+
+function inside function
+
+higher order function
+- med exempel
+
+anonymous functions
+
+assign function to a val
+
+partially applied functons
+
+--
+KOAN
+abandon reason
+
+--
+
+Datastructures
+touple
+list
+
+--
+
+case classes
+- eq if same type and values
+- immutable
+- slipper new <<<
+- har en copy metode, sjekk ut.
+
+sealed trait, no extentions
+case object, just single instance
+- patternmatch exhaustive match....
+
+
+--
+pattern match
+
+match on value: case 1 =>
+match on any: case _  =>
+
+matche på forskjellige typer:
+case i: Int =>
+case s: String =>
+
+guards
+case i: Int if i == 0 => ...
+case i: Int if i > 5 => ...
+
+case (user, password) => ... navne binding
+
+case Person(_,_, Adress(_,country)) =>...
+
+
+--
+
+functional combinators
+
+polymorphic methods
+
+def dup[T](....  <<< T type
+
+
+--
+flatmap
+
+person pet list. Map gir list(list(pets))
+flatmap  List(pets)
+
+
+
+
+
+
+
+
+
+
+
+
+
