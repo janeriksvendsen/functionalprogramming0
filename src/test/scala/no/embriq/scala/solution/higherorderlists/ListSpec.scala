@@ -56,15 +56,19 @@ class ListSpec extends FlatSpec with Matchers with PendingIfUnimplemented {
 
   "flatten" should "merge all list in a list to one list" in {
     List.flatten(List(list123, list456)) shouldBe List(1, 2, 3, 4, 5, 6)
+    List.flatten2(List(list123, list456)) shouldBe List(1, 2, 3, 4, 5, 6)
+    List.flatten3(List(list123, list456)) shouldBe List(1, 2, 3, 4, 5, 6)
   }
 
   "filter" should "reteurn a new list with all the elements that evaluates to true" in {
     List.filter(list123, (x: Int) => x > 2) shouldBe List(3)
+    List.filter2(list123, (x: Int) => x > 2) shouldBe List(3)
   }
 
   "map" should "return a new list with the function applied" in {
     List map(list123, (x: Int) => x + 3) shouldBe List(4, 5, 6)
     List.map(list123, (x: Int) => List(x, x)) shouldBe List(List(1, 1), List(2, 2), List(3, 3))
+    List.map2(list123, (x: Int) => List(x, x)) shouldBe List(List(1, 1), List(2, 2), List(3, 3))
   }
 
   "flatmap" should "return a flattend list" in {

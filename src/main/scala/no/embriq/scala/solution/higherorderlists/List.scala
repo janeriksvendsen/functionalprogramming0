@@ -2,7 +2,7 @@ package no.embriq.scala.solution.higherorderlists
 
 import scala.annotation.tailrec
 
-sealed trait  List[+A]
+sealed trait List[+A]
 
 case object Nil extends List[Nothing]
 
@@ -25,6 +25,7 @@ object List {
     case Cons(h, t) => foldLeft(t, f(z, h))(f)
   }
 
+
   def sum(l: List[Int]): Int = List.foldLeft(l, 0)(_ + _)
 
   def product(l: List[Int]): Int = List.foldLeft(l, 1)(_ * _)
@@ -37,13 +38,42 @@ object List {
 
   def append[A](a1: List[A], a2: List[A]): List[A] = List.foldRight(a1, a2)((a: A, as: List[A]) => Cons(a, as))
 
+  // egendlig samme som over men gidder ikke å navne parameterne
   def append2[A](a1: List[A], a2: List[A]): List[A] = List.foldRight(a1, a2)(Cons(_, _))
 
+  // Skal ta en liste av lister og gjøre om til en "flat" liste.
+  // det blir i praksis å append alle listene sammen til en liste.
   def flatten[A](l: List[List[A]]): List[A] = List.foldRight(l, Nil: List[A])(append)
 
-  def filter[A](l: List[A], f: A => Boolean): List[A] = this.foldRight(l, Nil: List[A])((h, t) => if (f(h)) Cons(h, t) else t)
+  // har bare ekspandert append funksjonen for å vise hvodean det ser ut.
+  def flatten2[A](l: List[List[A]]): List[A] = List.foldRight(l, Nil: List[A])(List.foldRight(_, _)(Cons(_, _)))
 
-  def map[B, A](l: List[A], f: A => B): List[B] = this.foldRight(l, Nil: List[B])((h, t) => Cons(f(h), t))
+  def flatten3[A](l: List[List[A]]): List[A] = {
+    def append(l1: List[A], l2: List[A]): List[A] = l1 match {
+      case Nil => l2
+      case Cons(h, t) => Cons(h, append(t, l2))
+    }
+
+    l match {
+      case Nil => Nil
+      case Cons(h, t) => append(h, flatten3(t))
+    }
+  }
+
+  def filter[A](l: List[A], f: A => Boolean): List[A] = l match {
+    case Nil => Nil
+    case Cons(h, t) => if (f(h)) Cons(h, t) else filter(t, f)
+  }
+
+  def filter2[A](l: List[A], f: A => Boolean): List[A] = this.foldRight(l, Nil: List[A])((h, t) => if (f(h)) Cons(h, t) else t)
+
+  // from scratch
+  def map[B, A](l: List[A], f: A => B): List[B] = l match {
+    case Nil => Nil
+    case Cons(h, t) => Cons(f(h), map(t, f))
+  }
+
+  def map2[B, A](l: List[A], f: A => B): List[B] = this.foldRight(l, Nil: List[B])((h, t) => Cons(f(h), t))
 
   def flatMap[A, B](l: List[A], f: A => List[B]): List[B] = List.flatten(List.map(l, f))
 
